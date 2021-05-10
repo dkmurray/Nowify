@@ -12,6 +12,8 @@
   height: 100%;
   padding: var(--spacing-l);
   width: 100%;
+  border-top: 70px solid black;
+  border-bottom: 70px solid black;
 
   &__cover,
   &__details {

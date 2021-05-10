@@ -18,7 +18,13 @@
       </div>
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
-      <h1 class="now-playing__idle-heading">No music is playing 😔</h1>
+      <div class="now-playing__screensaver">
+        <img src="https://picsum.photos/1024/1140" 
+        width="1024" 
+        height="1140"
+        class="now-playing__screensaver-image">
+    </div> 
+<!--       <h1 class="now-playing__idle-heading">No music is playing 😔</h1> -->    
     </div>
   </div>
 </template>
