@@ -19,8 +19,7 @@
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
       <div class="now-playing__screensaver">
-        <img src="https://picsum.photos/1024/1140"
-        :key="backgroundKey"
+        <img :src="'https://picsum.photos/1024/1140?random=' + backgroundKey"
         width="1024" 
         height="1140"
         class="now-playing__screensaver-image">
@@ -131,9 +130,7 @@ export default {
     changeBackground() {
       setInterval(() => {
         this.backgroundKey += 1
-        console.log(this.backgroundKey)
-      }, 10000)
-      console.log('change bg')
+      }, 1800000)
     },
 
     /**
