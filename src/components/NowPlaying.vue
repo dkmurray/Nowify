@@ -19,7 +19,8 @@
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
       <div class="now-playing__screensaver">
-        <img src="https://picsum.photos/1024/1140" 
+        <img src="https://picsum.photos/1024/1140"
+        :key="backgroundKey"
         width="1024" 
         height="1140"
         class="now-playing__screensaver-image">
@@ -49,7 +50,8 @@ export default {
       playerResponse: {},
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
-      swatches: []
+      swatches: [],
+      backgroundKey: 0
     }
   },
 
@@ -65,6 +67,7 @@ export default {
 
   mounted() {
     this.setDataInterval()
+    this.changeBackground()
   },
 
   beforeDestroy() {
@@ -123,6 +126,14 @@ export default {
           this.$emit('spotifyTrackUpdated', data)
         })
       }
+    },
+
+    changeBackground() {
+      setInterval(() => {
+        this.backgroundKey += 1
+        console.log(this.backgroundKey)
+      }, 10000)
+      console.log('change bg')
     },
 
     /**
